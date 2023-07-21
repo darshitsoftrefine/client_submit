@@ -2,6 +2,7 @@ import 'package:client_submit/constants/custom_widgets.dart';
 import 'package:client_submit/themes/themes.dart';
 import 'package:client_submit/trip_details/passengers_list/passengers_list_model.dart';
 import 'package:flutter/material.dart';
+import 'package:rounded_expansion_tile/rounded_expansion_tile.dart';
 
 class PassengersListScreen extends StatefulWidget {
   const PassengersListScreen({super.key});
@@ -11,6 +12,10 @@ class PassengersListScreen extends StatefulWidget {
 }
 
 class _PassengersListScreenState extends State<PassengersListScreen> {
+
+  var isClick = false;
+  bool isExpanded = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +43,7 @@ class _PassengersListScreenState extends State<PassengersListScreen> {
           children: [
             ListView.builder(
                 shrinkWrap: true,
-                scrollDirection: Axis.vertical,
+                physics: NeverScrollableScrollPhysics(),
                 itemCount: browseList.length,
                 itemBuilder: (context, index){
                   return Padding(
@@ -50,33 +55,68 @@ class _PassengersListScreenState extends State<PassengersListScreen> {
                             side: BorderSide(color: browseList[index].leadColor),
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: ExpansionTile(
-                            shape: Border(
-                              left: BorderSide(color: browseList[index].leadColor, width: 6),
-                            ),
-
-                            leading: SizedBox(
-                              width: 88,
-                              height: 50,
-                              child: Row(
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      color: CustomColors.secondaryColor
-                                    ),
-                                      child: Text(browseList[index].logoText, style: TextStyle(fontSize: 20, color: browseList[index].leadColor, fontWeight: FontWeight.w400))),
-                                  SizedBox(width: 20,),
-                                  VerticalDivider(color: browseList[index].leadColor, width: 2, thickness: 1,)
-                                ],
+                          child: ClipRRect(
+                            child: RoundedExpansionTile(
+                            // onExpansionChanged: (value){
+                            //     isExpanded = value;
+                            // },
+                            //   border: Border(
+                            //     left: BorderSide(
+                            //     // Set the border radius to 50%.
+                            //     // borderRadius: BorderRadius.circular(50),
+                            //     // width: 5,
+                            //     // color: Colors.red,
+                            //     ),
+                            //     ),
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16),
+                                side: BorderSide(color: browseList[index].leadColor, width: 3)
                               ),
+
+                              // Border(
+                              //   left: BorderSide(color: !isExpanded ? browseList[index].leadColor : Colors.transparent, width: 4),
+                              //
+                              // ),
+
+                              leading: SizedBox(
+                                width: 88,
+                                height: 70,
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: CustomColors.secondaryColor
+                                      ),
+                                        child: Text(browseList[index].logoText, style: TextStyle(fontSize: 20, color: browseList[index].leadColor, fontWeight: FontWeight.w400))),
+                                    SizedBox(width: 20,),
+                                    VerticalDivider(color: browseList[index].leadColor, width: 4, thickness: 1, endIndent: 0,)
+                                  ],
+                                ),
+                              ),
+                              title: RichText(
+                                  text: TextSpan(
+                                  text: "Name: ",
+                                  style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+                                  children: [
+                                  TextSpan(
+                                  text: browseList[index].name,
+                                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400),
+                                  ),
+
+                  ],
+                  ),
+                  ),
+                                //Text("Name: "+ browseList[index].name, style: TextStyle(fontSize: 14),),
+                              trailing:  isClick ? null: IconButton(
+                                onPressed: (){}, icon: Icon(Icons.arrow_drop_down_sharp, size: 35,),),
+
+                              children: [
+                               CustomWidgets().expandableTile(browseList[index].leadColor)
+                              ],
                             ),
-                            title: Text("Name: "+ browseList[index].name, style: TextStyle(fontSize: 14),),
-                            trailing: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_drop_down_sharp, size: 35,),),
                           ),
                         ),
-                        browseList[index].isChecked ? Positioned(
-                          left: 355,
-                          bottom: 40,
+                        browseList[index].isChecked ? Align(
+                          alignment: Alignment.topRight,
                           child: SizedBox(
                             width: 24,
                               height: 24,
