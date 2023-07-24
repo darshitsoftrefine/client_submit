@@ -253,7 +253,7 @@ class CustomWidgets {
                 ),
                 child: Text("Passenger List", style: TextStyle(color: CustomColors.secondaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
               ),
-              const SizedBox(width: 10,),
+              const SizedBox(width: 9,),
               ElevatedButton(
                 onPressed: (){
                   pressed1();
@@ -268,7 +268,7 @@ class CustomWidgets {
                 ),
                 child: Text("Expenses Bill", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
               ),
-              const SizedBox(width: 10,),
+              const SizedBox(width: 9,),
               ElevatedButton(
                 onPressed: (){
                  pressed2();
@@ -323,7 +323,7 @@ class CustomWidgets {
                   ),
                   child: Text("Passenger List", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
                 ),
-                const SizedBox(width: 10,),
+                const SizedBox(width: 1,),
                 ElevatedButton(
                   onPressed: (){
 
@@ -334,11 +334,11 @@ class CustomWidgets {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(32),
                       side: BorderSide(width: 1, color: CustomColors.primaryColor),
-                    ),
+                    ),  
                   ),
                   child: Text("Expenses Bill", style: TextStyle(color: CustomColors.secondaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
                 ),
-                const SizedBox(width: 10,),
+                const SizedBox(width: 1,),
                 ElevatedButton(
                   onPressed: (){
                     pressed2();
@@ -393,7 +393,7 @@ class CustomWidgets {
                   ),
                   child: Text("Passenger List", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
                 ),
-                const SizedBox(width: 10,),
+                const SizedBox(width: 9,),
                 ElevatedButton(
                   onPressed: (){
                     pressed2();
@@ -408,7 +408,7 @@ class CustomWidgets {
                   ),
                   child: Text("Expenses Bill", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
                 ),
-                const SizedBox(width: 10,),
+                const SizedBox(width: 9,),
                 ElevatedButton(
                   onPressed: (){
 
@@ -458,40 +458,42 @@ class CustomWidgets {
                           Row(
                             children: [
                               const Text("Bill Name: ", style: TextStyle(fontSize: 10, fontWeight: FontWeight.w500),),
-                              SizedBox(
-                                height: 29.8,
-                                width: 232.68 ,child: TextField(
-                                style: const TextStyle(fontSize: 10),
-                                autofocus: true,
-                                textCapitalization:
-                                TextCapitalization.sentences,
-                                controller: billController,
-                                decoration: InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    borderSide: BorderSide(
-                                        color: Colors.grey.shade500,
-                                        style: BorderStyle.solid),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
+                              Expanded(
+                                child: SizedBox(
+                                  height: 29.8,
+                                  width: 232.68 ,child: TextField(
+                                  style: const TextStyle(fontSize: 10),
+                                  autofocus: true,
+                                  textCapitalization:
+                                  TextCapitalization.sentences,
+                                  controller: billController,
+                                  decoration: InputDecoration(
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
                                       borderSide: BorderSide(
-                                        color: Colors.grey.shade500,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10)
-                                  ),
-                                  hintText: 'Bill Name',
-                                  contentPadding: EdgeInsets.only(top: 4, left: 10),
-                                  hintStyle: TextStyle(
-                                      color: Colors.grey.shade500, fontSize: 10),
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    borderSide: BorderSide(
-                                        color: Colors.grey.shade500,
-                                        style: BorderStyle.solid),
+                                          color: Colors.grey.shade500,
+                                          style: BorderStyle.solid),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Colors.grey.shade500,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius: BorderRadius.circular(10)
+                                    ),
+                                    hintText: 'Bill Name',
+                                    contentPadding: EdgeInsets.only(top: 4, left: 10),
+                                    hintStyle: TextStyle(
+                                        color: Colors.grey.shade500, fontSize: 10),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderSide: BorderSide(
+                                          color: Colors.grey.shade500,
+                                          style: BorderStyle.solid),
+                                    ),
                                   ),
                                 ),
-                              ),
+                                ),
                               )
                             ],
                           ),
@@ -500,41 +502,43 @@ class CustomWidgets {
                             children: [
                               const Text("Amount: ", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 10),),
                               const SizedBox(width: 8,),
-                              SizedBox(
-                                height: 29.8,
-                                width: 232.68 ,child: TextField(
-                                style: const TextStyle(fontSize: 10),
-                                autofocus: true,
-                                keyboardType: TextInputType.number,
-                                textCapitalization:
-                                TextCapitalization.sentences,
-                                controller: amountController,
-                                decoration: InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    borderSide:  BorderSide(
-                                        color: Colors.grey.shade500,
-                                        style: BorderStyle.solid),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.grey.shade500,
-                                      width: 1.0,
+                              Expanded(
+                                child: SizedBox(
+                                  height: 29.8,
+                                  width: 232.68 ,child: TextField(
+                                  style: const TextStyle(fontSize: 10),
+                                  autofocus: true,
+                                  keyboardType: TextInputType.number,
+                                  textCapitalization:
+                                  TextCapitalization.sentences,
+                                  controller: amountController,
+                                  decoration: InputDecoration(
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderSide:  BorderSide(
+                                          color: Colors.grey.shade500,
+                                          style: BorderStyle.solid),
                                     ),
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  hintText: 'Amount',
-                                  contentPadding: EdgeInsets.only(top: 4, left: 10),
-                                  hintStyle: TextStyle(
-                                      color: Colors.grey.shade500, fontSize: 10),
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    borderSide: BorderSide(
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
                                         color: Colors.grey.shade500,
-                                        style: BorderStyle.solid),
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    hintText: 'Amount',
+                                    contentPadding: EdgeInsets.only(top: 4, left: 10),
+                                    hintStyle: TextStyle(
+                                        color: Colors.grey.shade500, fontSize: 10),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      borderSide: BorderSide(
+                                          color: Colors.grey.shade500,
+                                          style: BorderStyle.solid),
+                                    ),
                                   ),
                                 ),
-                              ),
+                                ),
                               )
                             ],
                           ),
