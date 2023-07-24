@@ -481,6 +481,7 @@ class CustomWidgets {
                                       borderRadius: BorderRadius.circular(10)
                                   ),
                                   hintText: 'Bill Name',
+                                  contentPadding: EdgeInsets.only(top: 4, left: 10),
                                   hintStyle: TextStyle(
                                       color: Colors.grey.shade500, fontSize: 10),
                                   border: OutlineInputBorder(
@@ -523,6 +524,7 @@ class CustomWidgets {
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   hintText: 'Amount',
+                                  contentPadding: EdgeInsets.only(top: 4, left: 10),
                                   hintStyle: TextStyle(
                                       color: Colors.grey.shade500, fontSize: 10),
                                   border: OutlineInputBorder(
