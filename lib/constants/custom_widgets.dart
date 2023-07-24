@@ -5,60 +5,6 @@ import '../themes/themes.dart';
 
 class CustomWidgets {
 
-  Widget appBarThreeButtons(){
-    return Expanded(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          ElevatedButton(
-            onPressed: (){
-
-            },
-            style: ElevatedButton.styleFrom(
-              minimumSize: const Size(145, 35),
-              backgroundColor: CustomColors.primaryColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(32),
-                side: BorderSide(width: 1, color: CustomColors.primaryColor),
-              ),
-            ),
-            child: Text("Passenger List", style: TextStyle(color: CustomColors.secondaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
-          ),
-          const SizedBox(width: 10,),
-          ElevatedButton(
-            onPressed: (){
-
-            },
-            style: ElevatedButton.styleFrom(
-              minimumSize: const Size(134, 35),
-              backgroundColor: CustomColors.secondaryColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(32),
-                side: BorderSide(width: 1, color: CustomColors.primaryColor),
-              ),
-            ),
-            child: Text("Expenses Bill", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
-          ),
-          const SizedBox(width: 10,),
-          ElevatedButton(
-            onPressed: (){
-
-            },
-            child: Text("Check In", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
-            style: ElevatedButton.styleFrom(
-              minimumSize: const Size(101, 35),
-              backgroundColor: CustomColors.secondaryColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(32),
-                side: BorderSide(width: 1, color: CustomColors.primaryColor),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   Widget passengerListView(){
     return ListTile(
       leading: Row(
@@ -77,7 +23,6 @@ class CustomWidgets {
   Widget expandableTile(Color color){
     return Column(
       children: [
-        Divider(color: color, thickness: 1.5),
         Container(
           padding: const EdgeInsets.only(left: 22, right: 38, top: 25, bottom: 25),
           child: Column(

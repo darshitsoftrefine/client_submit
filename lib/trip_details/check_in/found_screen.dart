@@ -15,7 +15,11 @@ class _FoundScreenState extends State<FoundScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: Builder(builder: (BuildContext context){
-          return RotatedBox(quarterTurns: 0, child: IconButton(onPressed: () => Navigator.pop(context, false), icon: Icon(Icons.arrow_back_rounded)),);
+          return RotatedBox(quarterTurns: 0,
+            child: IconButton(
+                onPressed: () => Navigator.pop(context, false), icon: Icon(Icons.arrow_back_rounded)
+            ),
+          );
         }),
         title: Text("Result"),
       ),

@@ -14,6 +14,6 @@ class ExpensesBillModel {
 
 }
 List<ExpensesBillModel> expensesList = [
-  ExpensesBillModel(bill: 'Petrol Bill', image: 'assets/images/petrol_bill.png', color: Color(0xFF71A1FF)),
-  ExpensesBillModel(bill: 'Petrol Bill 2',image: 'assets/images/petrol_bill.png', color: Color(0xFF7B7B7B))
+  ExpensesBillModel(bill: 'Petrol Bill', image: 'assets/images/bill.png', color: Color(0xFF71A1FF)),
+  ExpensesBillModel(bill: 'Petrol Bill 2',image: 'assets/images/bill.png', color: Color(0xFF7B7B7B))
 ];

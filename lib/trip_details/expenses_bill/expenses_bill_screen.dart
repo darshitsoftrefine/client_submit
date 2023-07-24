@@ -1,8 +1,10 @@
 import 'package:client_submit/trip_details/expenses_bill/expenses_bill_model.dart';
+import 'package:client_submit/trip_details/passengers_list/passengers_list_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/custom_widgets.dart';
 import '../../themes/themes.dart';
+import '../check_in/check_in_qr.dart';
 
 class ExpensesBillScreen extends StatefulWidget {
   const ExpensesBillScreen({super.key});
@@ -12,7 +14,8 @@ class ExpensesBillScreen extends StatefulWidget {
 }
 
 class _ExpensesBillScreenState extends State<ExpensesBillScreen> {
-  TextEditingController controller = TextEditingController();
+  TextEditingController billController = TextEditingController();
+  TextEditingController amountController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +34,63 @@ class _ExpensesBillScreenState extends State<ExpensesBillScreen> {
         centerTitle: true,
         bottom: PreferredSize(
           preferredSize:  const Size.fromHeight(60),
-          child: CustomWidgets().appBarThreeButtons(),
+          child: Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PassengersListScreen()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(145, 35),
+                    backgroundColor: CustomColors.secondaryColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(32),
+                      side: BorderSide(width: 1, color: CustomColors.primaryColor),
+                    ),
+                  ),
+                  child: Text("Passenger List", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
+                ),
+                const SizedBox(width: 10,),
+                ElevatedButton(
+                  onPressed: (){
+
+                  },
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(145, 35),
+                    backgroundColor: CustomColors.primaryColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(32),
+                      side: BorderSide(width: 1, color: CustomColors.primaryColor),
+                    ),
+                  ),
+                  child: Text("Expenses Bill", style: TextStyle(color: CustomColors.secondaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
+                ),
+                const SizedBox(width: 10,),
+                ElevatedButton(
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Scanner()),
+                    );
+                  },
+                  child: Text("Check In", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(101, 35),
+                    backgroundColor: CustomColors.secondaryColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(32),
+                      side: BorderSide(width: 1, color: CustomColors.primaryColor),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          )
         ),
       ),
       body: Column(
@@ -45,15 +104,18 @@ class _ExpensesBillScreenState extends State<ExpensesBillScreen> {
                 return Padding(
                   padding: const EdgeInsets.only(left: 15, right: 15, bottom: 12,),
                   child: Card(
-                    shape: RoundedRectangleBorder(side: BorderSide(color: expensesList[index].color)),
+                    shape: RoundedRectangleBorder(
+                        side: BorderSide(color: expensesList[index].color),
+                        borderRadius: BorderRadius.circular(10)
+                    ),
                     child: SizedBox(
                       width: 400,
                       height: 131,
                       child: ListTile(
-                        shape: RoundedRectangleBorder(
-                          side: BorderSide(color: expensesList[index].color)
-                        ),
-                        leading: SizedBox(child: FlutterLogo(size: 51,)),
+                        // shape: RoundedRectangleBorder(
+                        //   side: BorderSide(color: expensesList[index].color)
+                        // ),
+                        leading: SizedBox(child: Image.asset(expensesList[index].image)),
                         title: Center(child: Text(expensesList[index].bill, style: TextStyle(fontSize: 18.57, fontWeight: FontWeight.w400),)),
                       ),
                     ),
@@ -63,7 +125,9 @@ class _ExpensesBillScreenState extends State<ExpensesBillScreen> {
           Padding(
             padding: const EdgeInsets.only(left: 15, right: 15, bottom: 12,),
             child: Card(
-              shape: RoundedRectangleBorder(side: BorderSide(color: Color(0xFF4DB457))),
+              shape: RoundedRectangleBorder(side: BorderSide(color: Color(0xFF4DB457)),
+                borderRadius: BorderRadius.circular(10)
+              ),
               child: SizedBox(
                 width: 400,
                 height: 131,
@@ -74,7 +138,7 @@ class _ExpensesBillScreenState extends State<ExpensesBillScreen> {
                     content: SingleChildScrollView(
                       child: Column(
                         children: [
-                          FlutterLogo(size: 200,),
+                          FlutterLogo(size: 50,),
                           SizedBox(height: 40,),
                           Row(
                             children: [
@@ -84,7 +148,7 @@ class _ExpensesBillScreenState extends State<ExpensesBillScreen> {
                                 autofocus: true,
                                 textCapitalization:
                                 TextCapitalization.sentences,
-                                controller: controller,
+                                controller: billController,
                                 decoration: InputDecoration(
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10.0),
@@ -120,9 +184,10 @@ class _ExpensesBillScreenState extends State<ExpensesBillScreen> {
                               Container(
                                 width: 200 ,child: TextField(
                                 autofocus: true,
+                                keyboardType: TextInputType.number,
                                 textCapitalization:
                                 TextCapitalization.sentences,
-                                controller: controller,
+                                controller: amountController,
                                 decoration: InputDecoration(
                                   enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10.0),
