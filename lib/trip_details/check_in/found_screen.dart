@@ -17,20 +17,20 @@ class _FoundScreenState extends State<FoundScreen> {
         leading: Builder(builder: (BuildContext context){
           return RotatedBox(quarterTurns: 0,
             child: IconButton(
-                onPressed: () => Navigator.pop(context, false), icon: Icon(Icons.arrow_back_rounded)
+                onPressed: () => Navigator.pop(context, false), icon: const Icon(Icons.arrow_back_rounded)
             ),
           );
         }),
-        title: Text("Result"),
+        title: const Text("Result"),
       ),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text("Result"),
-              SizedBox(height: 20,),
+              const Text("Result"),
+              const SizedBox(height: 20,),
               Text(widget.value)
             ],
           ),

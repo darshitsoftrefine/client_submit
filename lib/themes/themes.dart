@@ -6,6 +6,7 @@ class CustomThemes{
 
 class CustomColors {
   static Color primaryColor = const Color(0xFF2B3087);
+  static Color buttonColor = const Color(0xFF6167C9);
   static Color secondaryColor = const Color(0xFFFFFFFF);
   static Color onboardColor = const Color(0xFF00AF3C);
   static Color circColor = const Color(0xFFA08DCF);
