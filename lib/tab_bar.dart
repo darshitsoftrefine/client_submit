@@ -34,7 +34,7 @@ class Tab_Bar extends StatelessWidget {
               tabs: const [
                 Tab(text: "Passenger List",),
                 Tab(text: "Expenses Bill",),
-                Tab(text: "Check In",)
+                Tab(text: "Check-In",)
               ]),
         ),
 

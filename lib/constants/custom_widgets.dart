@@ -151,11 +151,11 @@ class CustomWidgets {
                   title: RichText(
                     text: TextSpan(
                       text: "Name: ",
-                      style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+                      style: CustomTheme.lightTheme().textTheme.bodySmall,
                       children: [
                         TextSpan(
                           text: name,
-                          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.w400),
+                          style: TextStyle(color: Colors.black, fontWeight: FontWeight.normal),
                         ),
 
                       ],
@@ -203,7 +203,7 @@ class CustomWidgets {
             children: [
               Image.asset(image, fit: BoxFit.fitWidth,),
               const SizedBox(width: 56,),
-              Text(bill, style: const TextStyle(fontSize: 18.57, fontWeight: FontWeight.w400),),
+              Text(bill, style: CustomTheme.lightTheme().textTheme.labelSmall,),
             ],
           ),
         ),
@@ -240,7 +240,7 @@ class CustomWidgets {
                           const SizedBox(height: 40,),
                           Row(
                             children: [
-                              const Text("Bill Name: ", style: TextStyle(fontSize: 10, fontWeight: FontWeight.w500),),
+                              Text("Bill Name: ", style: CustomTheme.lightTheme().textTheme.displaySmall,),
                               Expanded(
                                 child: SizedBox(
                                   height: 29.8,
@@ -283,7 +283,7 @@ class CustomWidgets {
                           const SizedBox(height: 20,),
                           Row(
                             children: [
-                              const Text("Amount: ", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 10),),
+                              Text("Amount: ", style: CustomTheme.lightTheme().textTheme.displaySmall),
                               const SizedBox(width: 8,),
                               Expanded(
                                 child: SizedBox(
@@ -348,7 +348,7 @@ class CustomWidgets {
                                 side: BorderSide(width: 1, color: CustomColors.primaryColor),
                               ),
                             ),
-                            child: Text("Cancel", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
+                            child: Text("Cancel", style: CustomTheme.lightTheme().textTheme.labelLarge,),
                           ),
                           const SizedBox(width: 10,),
                           ElevatedButton(
@@ -365,7 +365,7 @@ class CustomWidgets {
                                 side: BorderSide(width: 1, color: CustomColors.buttonColor),
                               ),
                             ),
-                            child: Text("Submit", style: TextStyle(color: CustomColors.secondaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
+                            child: Text("Submit", style: CustomTheme.lightTheme().textTheme.labelMedium,),
                           ),
                         ],
                       ),

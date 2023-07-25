@@ -1,7 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class CustomThemes{
-
+class CustomTheme {
+  static ThemeData lightTheme() {
+    return ThemeData(
+        inputDecorationTheme: InputDecorationTheme(
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(30),
+              borderSide: BorderSide(color: CustomColors.secondaryColor),
+            ),
+            hintStyle: GoogleFonts.roboto(color: CustomColors.secondaryColor, fontWeight: FontWeight.w400, fontSize: 18)),
+        textTheme: TextTheme(
+          //button: GoogleFonts.roboto(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),
+          //bodyMedium: GoogleFonts.montserrat(color: CustomColors.mainColor, fontSize: 20, fontWeight: FontWeight.w500),
+          labelMedium: GoogleFonts.roboto(color: CustomColors.secondaryColor, fontWeight: FontWeight.w400, fontSize: 15),
+          labelLarge: GoogleFonts.roboto(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),
+          //headlineMedium: GoogleFonts.montserrat(color: CustomColors.customBlack, fontSize: 18, fontWeight: FontWeight.w700),
+          titleSmall: GoogleFonts.roboto(color: Colors.black, fontSize: 14, fontWeight: FontWeight.w400),
+          titleLarge: GoogleFonts.roboto(color: CustomColors.secondaryColor, fontSize: 24, fontWeight: FontWeight.w700),
+          bodySmall: GoogleFonts.roboto(color: Colors.black, fontSize: 14, fontWeight: FontWeight.bold),
+          labelSmall: GoogleFonts.roboto(color: Colors.black, fontSize: 18.57, fontWeight: FontWeight.w400),
+          displaySmall: GoogleFonts.roboto(color:Colors.black, fontSize: 10, fontWeight: FontWeight.w500),
+        ));
+  }
 }
 
 class CustomColors {

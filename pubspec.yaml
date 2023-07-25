@@ -39,6 +39,7 @@ dependencies:
   qr_code_scanner: ^1.0.1
   mobile_scanner: ^2.1.0
   rounded_expansion_tile: ^0.0.13
+  google_fonts: ^4.0.4
 
 
 dev_dependencies:
