@@ -161,7 +161,6 @@ class CustomWidgets {
                       ],
                     ),
                   ),
-                  //Text("Name: "+ browseList[index].name, style: TextStyle(fontSize: 14),),
                   trailing: IconButton(
                     onPressed: (){}, icon: const Icon(Icons.arrow_drop_down_sharp, size: 35,),),
 

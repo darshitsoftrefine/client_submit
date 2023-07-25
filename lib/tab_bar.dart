@@ -25,8 +25,8 @@ class Tab_Bar extends StatelessWidget {
             ),
             centerTitle: true,
           bottom: TabBar(
-            //isScrollable: true,
-            padding: const EdgeInsets.only(left: 16, right: 14, top: 8, bottom: 8),
+            isScrollable: true,
+              padding: EdgeInsets.all(10),
               unselectedLabelColor: CustomColors.primaryColor,
               indicator: BoxDecoration(
                   borderRadius: BorderRadius.circular(50), // Creates border

@@ -1,3 +1,4 @@
+import 'package:client_submit/themes/themes.dart';
 import 'package:client_submit/trip_details/check_in/QRScanner.dart';
 import 'package:client_submit/trip_details/check_in/found_screen.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,7 @@ class _ScannerState extends State<Scanner> {
             controller: cameraController,
             onDetect: _foundBarcode,),
           QRScannerOverlay(overlayColour: Colors.white.withOpacity(0.5)),
-          const Text("Scan QR Code", style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),),
+           Text("Scan QR Code", style: CustomTheme.lightTheme().textTheme.titleLarge,),
         ],
       )
     );
