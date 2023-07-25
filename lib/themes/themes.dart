@@ -17,7 +17,7 @@ class CustomTheme {
           labelLarge: GoogleFonts.roboto(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),
           //headlineMedium: GoogleFonts.montserrat(color: CustomColors.customBlack, fontSize: 18, fontWeight: FontWeight.w700),
           titleSmall: GoogleFonts.roboto(color: Colors.black, fontSize: 14, fontWeight: FontWeight.w400),
-          titleLarge: GoogleFonts.roboto(color: CustomColors.secondaryColor, fontSize: 24, fontWeight: FontWeight.w700),
+          titleLarge: GoogleFonts.roboto(color: CustomColors.primaryColor, fontSize: 20, fontWeight: FontWeight.w600),
           bodySmall: GoogleFonts.roboto(color: Colors.black, fontSize: 14, fontWeight: FontWeight.bold),
           labelSmall: GoogleFonts.roboto(color: Colors.black, fontSize: 18.57, fontWeight: FontWeight.w400),
           displaySmall: GoogleFonts.roboto(color:Colors.black, fontSize: 10, fontWeight: FontWeight.w500),

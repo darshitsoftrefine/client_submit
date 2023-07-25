@@ -155,7 +155,7 @@ class CustomWidgets {
                       children: [
                         TextSpan(
                           text: name,
-                          style: TextStyle(color: Colors.black, fontWeight: FontWeight.normal),
+                          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.normal),
                         ),
 
                       ],
@@ -265,7 +265,7 @@ class CustomWidgets {
                                         borderRadius: BorderRadius.circular(10)
                                     ),
                                     hintText: 'Bill Name',
-                                    contentPadding: EdgeInsets.only(top: 4, left: 10),
+                                    contentPadding: const EdgeInsets.only(top: 4, left: 10),
                                     hintStyle: TextStyle(
                                         color: Colors.grey.shade500, fontSize: 10),
                                     border: OutlineInputBorder(
@@ -310,7 +310,7 @@ class CustomWidgets {
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     hintText: 'Amount',
-                                    contentPadding: EdgeInsets.only(top: 4, left: 10),
+                                    contentPadding: const EdgeInsets.only(top: 4, left: 10),
                                     hintStyle: TextStyle(
                                         color: Colors.grey.shade500, fontSize: 10),
                                     border: OutlineInputBorder(

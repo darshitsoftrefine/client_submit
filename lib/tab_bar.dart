@@ -21,7 +21,7 @@ class Tab_Bar extends StatelessWidget {
             ),
             title: Padding(
               padding: const EdgeInsets.only(top: 9.0),
-              child: Text("Trip Details", style: TextStyle(color: CustomColors.primaryColor, fontSize: 20, fontWeight: FontWeight.w600),),
+              child: Text("Trip Details", style: CustomTheme.lightTheme().textTheme.titleLarge,),
             ),
             centerTitle: true,
           bottom: TabBar(
