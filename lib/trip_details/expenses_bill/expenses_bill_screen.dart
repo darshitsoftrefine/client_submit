@@ -1,8 +1,6 @@
 import 'package:client_submit/trip_details/expenses_bill/expenses_bill_model.dart';
-import 'package:client_submit/trip_details/passengers_list/passengers_list_screen.dart';
 import 'package:flutter/material.dart';
 import '../../constants/custom_widgets.dart';
-import '../check_in/check_in_qr.dart';
 
 class ExpensesBillScreen extends StatefulWidget {
   const ExpensesBillScreen({super.key});
@@ -20,13 +18,6 @@ class _ExpensesBillScreenState extends State<ExpensesBillScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: CustomWidgets().expensesTopBar(context, () { Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const PassengersListScreen()),
-      );}, () {  Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const Scanner()),
-      );}),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -38,7 +29,7 @@ class _ExpensesBillScreenState extends State<ExpensesBillScreen> {
                 itemBuilder: (context, index){
                   return CustomWidgets().expensesList(expensesList[index].color, expensesList[index].image, expensesList[index].bill);
                 }),
-            CustomWidgets().expensesthirdTile(context, billController, amountController)
+            CustomWidgets().expensesThirdTile(context, billController, amountController)
           ],
         ),
       ),

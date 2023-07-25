@@ -1,10 +1,7 @@
 import 'package:client_submit/trip_details/check_in/QRScanner.dart';
 import 'package:client_submit/trip_details/check_in/found_screen.dart';
-import 'package:client_submit/trip_details/expenses_bill/expenses_bill_screen.dart';
-import 'package:client_submit/trip_details/passengers_list/passengers_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import '../../constants/custom_widgets.dart';
 
 class Scanner extends StatefulWidget {
   const Scanner({super.key});
@@ -29,13 +26,6 @@ class _ScannerState extends State<Scanner> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: CustomWidgets().checkInTopBar(context, () {  Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const PassengersListScreen()),
-      );}, () { Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const ExpensesBillScreen()),
-      );}),
       body: Stack(
         children: [
 
@@ -44,7 +34,7 @@ class _ScannerState extends State<Scanner> {
             controller: cameraController,
             onDetect: _foundBarcode,),
           QRScannerOverlay(overlayColour: Colors.white.withOpacity(0.5)),
-          const Text("Scan QR Code"),
+          const Text("Scan QR Code", style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),),
         ],
       )
     );
