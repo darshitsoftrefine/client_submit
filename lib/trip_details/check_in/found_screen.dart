@@ -1,3 +1,4 @@
+import 'package:client_submit/themes/themes.dart';
 import 'package:flutter/material.dart';
 
 class FoundScreen extends StatefulWidget {
@@ -14,6 +15,7 @@ class _FoundScreenState extends State<FoundScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: CustomColors.secondaryColor,
         leading: Builder(builder: (BuildContext context){
           return RotatedBox(quarterTurns: 0,
             child: IconButton(
@@ -21,7 +23,7 @@ class _FoundScreenState extends State<FoundScreen> {
             ),
           );
         }),
-        title: const Text("Result"),
+        title: Text("Result", style: TextStyle(color: CustomColors.primaryColor, fontSize: 20,),),
       ),
       body: Center(
         child: Padding(

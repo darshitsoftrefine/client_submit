@@ -1,3 +1,4 @@
+import 'package:client_submit/themes/themes.dart';
 import 'package:flutter/material.dart';
 
 class QRScannerOverlay extends StatelessWidget {
@@ -102,7 +103,7 @@ class BorderPainter extends CustomPainter {
     canvas.drawRRect(
       rrect,
       Paint()
-        ..color = Colors.white
+        ..color = CustomColors.primaryColor
         ..style = PaintingStyle.stroke
         ..strokeWidth = width,
     );

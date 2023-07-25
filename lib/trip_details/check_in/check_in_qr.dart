@@ -38,12 +38,13 @@ class _ScannerState extends State<Scanner> {
       );}),
       body: Stack(
         children: [
-          const Text("Scan QR Code"),
+
           MobileScanner(
             allowDuplicates: false,
             controller: cameraController,
             onDetect: _foundBarcode,),
-          QRScannerOverlay(overlayColour: Colors.white.withOpacity(0.5))
+          QRScannerOverlay(overlayColour: Colors.white.withOpacity(0.5)),
+          const Text("Scan QR Code"),
         ],
       )
     );

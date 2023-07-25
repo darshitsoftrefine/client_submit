@@ -7,21 +7,8 @@ import '../themes/themes.dart';
 
 class CustomWidgets {
 
-  Widget passengerListView(){
-    return ListTile(
-      leading: Row(
-        children: [
-          Container(
 
-          ),
-          const VerticalDivider(),
-        ],
-      ),
-      title: const Text(''),
-      trailing: IconButton(onPressed: (){}, icon: const Icon(Icons.arrow_drop_down_outlined, size: 20,)),
-    );
-  }
-
+  //Passenger Expandable List Tile Widget
   Widget expandableTile(Color color){
     return Column(
       children: [
@@ -112,6 +99,8 @@ class CustomWidgets {
     );
   }
 
+
+  // Passenger List View Widget
   Widget passengerList(Color leadColor, bool check, String logoText, String name){
     return Padding(
       padding: const EdgeInsets.only(left: 15, right: 15, bottom: 12),
@@ -197,6 +186,8 @@ class CustomWidgets {
     );
   }
 
+
+  //Expenses List Tile Widget
   Widget expensesList(Color color, String image, String bill){
     return Padding(
       padding: const EdgeInsets.only(left: 15, right: 15, bottom: 12,),
@@ -220,6 +211,8 @@ class CustomWidgets {
     );
   }
 
+
+  //App bar of Passenger Widget
   PreferredSizeWidget passengerTopBar(BuildContext context, VoidCallback pressed1, VoidCallback pressed2){
     return AppBar(
       backgroundColor: CustomColors.secondaryColor,
@@ -235,61 +228,69 @@ class CustomWidgets {
       centerTitle: true,
       bottom: PreferredSize(
         preferredSize:  const Size.fromHeight(60),
-        child: Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton(
-                onPressed: (){
+        child: Padding(
+          padding: const EdgeInsets.only(left: 16.0, right: 14, top: 8, bottom: 8),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton(
+                    onPressed: (){
 
-                },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(145, 35),
-                  backgroundColor: CustomColors.primaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(32),
-                    side: BorderSide(width: 1, color: CustomColors.primaryColor),
+                    },
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: const Size(145, 35),
+                      backgroundColor: CustomColors.primaryColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(32),
+                        side: BorderSide(width: 1, color: CustomColors.primaryColor),
+                      ),
+                    ),
+                    child: Text("Passenger List", style: TextStyle(color: CustomColors.secondaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
                   ),
-                ),
-                child: Text("Passenger List", style: TextStyle(color: CustomColors.secondaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
-              ),
-              const SizedBox(width: 9,),
-              ElevatedButton(
-                onPressed: (){
-                  pressed1();
-                },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(134, 35),
-                  backgroundColor: CustomColors.secondaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(32),
-                    side: BorderSide(width: 1, color: CustomColors.primaryColor),
+                  const SizedBox(width: 10,),
+                  ElevatedButton(
+                    onPressed: (){
+                      pressed1();
+                    },
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: const Size(134, 35),
+                      backgroundColor: CustomColors.secondaryColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(32),
+                        side: BorderSide(width: 1, color: CustomColors.primaryColor),
+                      ),
+                    ),
+                    child: Text("Expenses Bill", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
                   ),
-                ),
-                child: Text("Expenses Bill", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
-              ),
-              const SizedBox(width: 9,),
-              ElevatedButton(
-                onPressed: (){
-                 pressed2();
-                },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(101, 35),
-                  backgroundColor: CustomColors.secondaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(32),
-                    side: BorderSide(width: 1, color: CustomColors.primaryColor),
+                  const SizedBox(width: 10,),
+                  ElevatedButton(
+                    onPressed: (){
+                     pressed2();
+                    },
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: const Size(101, 35),
+                      backgroundColor: CustomColors.secondaryColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(32),
+                        side: BorderSide(width: 1, color: CustomColors.primaryColor),
+                      ),
+                    ),
+                    child: Text("Check In", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
                   ),
-                ),
-                child: Text("Check In", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
     );
   }
 
+
+  //App bar of Expenses screen Widget
   PreferredSizeWidget expensesTopBar(BuildContext context, VoidCallback pressed1, VoidCallback pressed2){
     return AppBar(
       backgroundColor: CustomColors.secondaryColor,
@@ -305,61 +306,68 @@ class CustomWidgets {
       centerTitle: true,
       bottom: PreferredSize(
           preferredSize:  const Size.fromHeight(60),
-          child: Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                  onPressed: (){
-                    pressed1();
-                  },
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(145, 35),
-                    backgroundColor: CustomColors.secondaryColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32),
-                      side: BorderSide(width: 1, color: CustomColors.primaryColor),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 16.0, right: 14, top: 8, bottom: 8),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton(
+                      onPressed: (){
+                        pressed1();
+                      },
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: const Size(145, 35),
+                        backgroundColor: CustomColors.secondaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(32),
+                          side: BorderSide(width: 1, color: CustomColors.primaryColor),
+                        ),
+                      ),
+                      child: Text("Passenger List", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
                     ),
-                  ),
-                  child: Text("Passenger List", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
-                ),
-                const SizedBox(width: 1,),
-                ElevatedButton(
-                  onPressed: (){
+                    const SizedBox(width: 10,),
+                    ElevatedButton(
+                      onPressed: (){
 
-                  },
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(145, 35),
-                    backgroundColor: CustomColors.primaryColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32),
-                      side: BorderSide(width: 1, color: CustomColors.primaryColor),
-                    ),  
-                  ),
-                  child: Text("Expenses Bill", style: TextStyle(color: CustomColors.secondaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
-                ),
-                const SizedBox(width: 1,),
-                ElevatedButton(
-                  onPressed: (){
-                    pressed2();
-                  },
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(101, 35),
-                    backgroundColor: CustomColors.secondaryColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32),
-                      side: BorderSide(width: 1, color: CustomColors.primaryColor),
+                      },
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: const Size(145, 35),
+                        backgroundColor: CustomColors.primaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(32),
+                          side: BorderSide(width: 1, color: CustomColors.primaryColor),
+                        ),
+                      ),
+                      child: Text("Expenses Bill", style: TextStyle(color: CustomColors.secondaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
                     ),
-                  ),
-                  child: Text("Check In", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
+                    const SizedBox(width: 10,),
+                    ElevatedButton(
+                      onPressed: (){
+                        pressed2();
+                      },
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: const Size(101, 35),
+                        backgroundColor: CustomColors.secondaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(32),
+                          side: BorderSide(width: 1, color: CustomColors.primaryColor),
+                        ),
+                      ),
+                      child: Text("Check In", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           )
       ),
     );
   }
 
+  //Appbar of QR Code Widget
   PreferredSizeWidget checkInTopBar(BuildContext context, VoidCallback pressed1, VoidCallback pressed2){
     return AppBar(
       backgroundColor: CustomColors.secondaryColor,
@@ -375,61 +383,69 @@ class CustomWidgets {
       centerTitle: true,
       bottom: PreferredSize(
           preferredSize:  const Size.fromHeight(60),
-          child: Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                  onPressed: (){
-                    pressed1();
-                  },
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(145, 35),
-                    backgroundColor: CustomColors.secondaryColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32),
-                      side: BorderSide(width: 1, color: CustomColors.primaryColor),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 16.0, right: 14, top: 8, bottom: 8),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton(
+                      onPressed: (){
+                        pressed1();
+                      },
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: const Size(145, 35),
+                        backgroundColor: CustomColors.secondaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(32),
+                          side: BorderSide(width: 1, color: CustomColors.primaryColor),
+                        ),
+                      ),
+                      child: Text("Passenger List", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
                     ),
-                  ),
-                  child: Text("Passenger List", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
-                ),
-                const SizedBox(width: 9,),
-                ElevatedButton(
-                  onPressed: (){
-                    pressed2();
-                  },
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(134, 35),
-                    backgroundColor: CustomColors.secondaryColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32),
-                      side: BorderSide(width: 1, color: CustomColors.primaryColor),
+                    const SizedBox(width: 10,),
+                    ElevatedButton(
+                      onPressed: (){
+                        pressed2();
+                      },
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: const Size(134, 35),
+                        backgroundColor: CustomColors.secondaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(32),
+                          side: BorderSide(width: 1, color: CustomColors.primaryColor),
+                        ),
+                      ),
+                      child: Text("Expenses Bill", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
                     ),
-                  ),
-                  child: Text("Expenses Bill", style: TextStyle(color: CustomColors.primaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
-                ),
-                const SizedBox(width: 9,),
-                ElevatedButton(
-                  onPressed: (){
+                    const SizedBox(width: 10,),
+                    ElevatedButton(
+                      onPressed: (){
 
-                  },
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(101, 35),
-                    backgroundColor: CustomColors.primaryColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32),
-                      side: BorderSide(width: 1, color: CustomColors.primaryColor),
+                      },
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: const Size(101, 35),
+                        backgroundColor: CustomColors.primaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(32),
+                          side: BorderSide(width: 1, color: CustomColors.primaryColor),
+                        ),
+                      ),
+                      child: Text("Check In", style: TextStyle(color: CustomColors.secondaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
                     ),
-                  ),
-                  child: Text("Check In", style: TextStyle(color: CustomColors.secondaryColor, fontWeight: FontWeight.w400, fontSize: 15),),
+                  ],
                 ),
-              ],
+              ),
             ),
           )
       ),
     );
   }
 
+
+  //Alert Dialog Box in Expenses Screen Widget
   Widget expensesthirdTile(BuildContext context, TextEditingController billController, TextEditingController amountController){
     return Padding(
       padding: const EdgeInsets.only(left: 15, right: 15, bottom: 12,),
