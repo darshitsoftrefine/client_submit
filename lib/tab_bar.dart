@@ -20,18 +20,17 @@ class Tab_Bar extends StatelessWidget {
               child: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back_ios_new, color: CustomColors.primaryColor,),),
             ),
             title: Padding(
-              padding: const EdgeInsets.only(top: 9.0),
+              padding: const EdgeInsets.only(top: 14.0),
               child: Text("Trip Details", style: CustomTheme.lightTheme().textTheme.titleLarge,),
             ),
             centerTitle: true,
           bottom: TabBar(
-            isScrollable: true,
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.only(left: 2, right: 2, top: 10, bottom: 10),
               unselectedLabelColor: CustomColors.primaryColor,
               indicator: BoxDecoration(
                   borderRadius: BorderRadius.circular(50), // Creates border
                   color: CustomColors.primaryColor),
-              tabs: const [
+              tabs: [
                 Tab(text: "Passenger List",),
                 Tab(text: "Expenses Bill",),
                 Tab(text: "Check-In",)

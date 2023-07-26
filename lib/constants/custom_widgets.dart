@@ -108,28 +108,32 @@ class CustomWidgets {
         children: [
           Card(
             shape: RoundedRectangleBorder(
-              side: BorderSide(color: leadColor),
+              side: BorderSide(color: leadColor, width: 1),
               borderRadius: BorderRadius.circular(16),
             ),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              //borderRadius: BorderRadius.circular(32),
+              //borderRadius: BorderRadius.horizontal(left: Radius.circular(90)),
               child: Container(
                 decoration:  BoxDecoration(
-                    border: Border(
-                        left: BorderSide(color: leadColor, width: 2)
-                    )
+                    // border: Border(
+                    //     left: BorderSide(color: leadColor, width: 3)
+                    // ),
+                  //borderRadius: BorderRadius.horizontal(left: Radius.circular(90),)
                 ),
                 child: RoundedExpansionTile(
-
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16),
+                  selectedTileColor: leadColor,
+                  shape:
+                  RoundedRectangleBorder(
+                      borderRadius: BorderRadius.horizontal(left: Radius.circular(16), right: Radius.circular(16)),
                       side: BorderSide(color: leadColor, width: 1)
                   ),
 
                   // Border(
-                  //   left: BorderSide(color: !isExpanded ? browseList[index].leadColor : Colors.transparent, width: 4),
+                  //   left: BorderSide(color: leadColor, width: 4),
+                  //   bottom: BorderSide(color: leadColor, width: 1)
                   //
                   // ),
+
 
                   leading: SizedBox(
                     width: 88,
@@ -140,7 +144,8 @@ class CustomWidgets {
                         Container(
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                                color: CustomColors.secondaryColor
+                              borderRadius: BorderRadius.circular(16),
+                                color: CustomColors.secondaryColor,
                             ),
                             child: Text(logoText, style: TextStyle(fontSize: 20, color: leadColor, fontWeight: FontWeight.w400))),
                         const SizedBox(width: 30,),
@@ -155,14 +160,12 @@ class CustomWidgets {
                       children: [
                         TextSpan(
                           text: name,
-                          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.normal),
                         ),
 
                       ],
                     ),
                   ),
-                  trailing: IconButton(
-                    onPressed: (){}, icon: const Icon(Icons.arrow_drop_down_sharp, size: 35,),),
+                  trailing: const Icon(Icons.arrow_drop_down_sharp, size: 35, color: Colors.black,),
 
                   children: [
                     CustomWidgets().expandableTile(leadColor)

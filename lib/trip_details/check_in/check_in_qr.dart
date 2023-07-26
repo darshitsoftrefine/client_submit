@@ -35,7 +35,12 @@ class _ScannerState extends State<Scanner> {
             controller: cameraController,
             onDetect: _foundBarcode,),
           QRScannerOverlay(overlayColour: Colors.white.withOpacity(0.5)),
-           Text("Scan QR Code", style: CustomTheme.lightTheme().textTheme.titleLarge,),
+           Positioned(
+             bottom: 100,
+               left: 140,
+               right: 50,
+               top: 100,
+               child: Text("Scan QR Code", style: CustomTheme.lightTheme().textTheme.displayLarge,)),
         ],
       )
     );
