@@ -67,7 +67,6 @@ class BorderPainter extends CustomPainter {
       size.width - 2 * width,
       size.height - 2 * width,
     );
-    final rrect = RRect.fromRectAndRadius(rect, const Radius.circular(radius));
     const clippingRect0 = Rect.fromLTWH(
       0,
       0,
@@ -100,8 +99,8 @@ class BorderPainter extends CustomPainter {
       ..addRect(clippingRect3);
 
     canvas.clipPath(path);
-    canvas.drawRRect(
-      rrect,
+    canvas.drawRect(
+      rect,
       Paint()
         ..color = CustomColors.primaryColor
         ..style = PaintingStyle.stroke

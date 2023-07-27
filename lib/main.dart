@@ -1,5 +1,4 @@
 import 'package:client_submit/tab_bar.dart';
-import 'package:client_submit/trip_details/passengers_list/passengers_list_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

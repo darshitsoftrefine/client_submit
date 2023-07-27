@@ -1,16 +1,16 @@
-import 'package:client_submit/constants/custom_widgets.dart';
 import 'package:client_submit/trip_details/passengers_list/passengers_list_model.dart';
 import 'package:flutter/material.dart';
 
-class PassengersListScreen extends StatefulWidget {
-  const PassengersListScreen({super.key});
+import '../../constants/custom_widgets.dart';
+
+class SecondScreen extends StatefulWidget {
+  const SecondScreen({super.key});
 
   @override
-  State<PassengersListScreen> createState() => _PassengersListScreenState();
+  State<SecondScreen> createState() => _SecondScreenState();
 }
 
-class _PassengersListScreenState extends State<PassengersListScreen> {
-
+class _SecondScreenState extends State<SecondScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +23,7 @@ class _PassengersListScreenState extends State<PassengersListScreen> {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: browseList.length,
                 itemBuilder: (context, index){
-                  return CustomWidgets().passengerList(browseList[index].leadColor, browseList[index].isChecked, browseList[index].logoText, browseList[index].name);
+                  return CustomWidgets().passenger2List(browseList[index].leadColor, browseList[index].isChecked, browseList[index].logoText, browseList[index].name);
                 })
           ],
         ),
