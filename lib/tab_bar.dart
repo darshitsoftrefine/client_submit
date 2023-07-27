@@ -20,10 +20,11 @@ class _Tab_BarState extends State<Tab_Bar> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
+          toolbarHeight: 80,
             backgroundColor: CustomColors.secondaryColor,
             elevation: 0.0,
             leading: Padding(
-              padding: const EdgeInsets.only(left: 2.0),
+              padding: const EdgeInsets.only(left: 2.0, top: 7),
               child: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back_ios_new, color: CustomColors.primaryColor,),),
             ),
             title: Padding(
@@ -33,8 +34,9 @@ class _Tab_BarState extends State<Tab_Bar> {
             centerTitle: true,
 
           bottom: TabBar(
-              labelPadding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 1),
-              padding: const EdgeInsets.only(left: 2, right: 2, top: 10, bottom: 10),
+              indicatorPadding: EdgeInsets.only(left: 10, right: 10),
+              labelPadding: const EdgeInsets.only(left: 10, right: 10, ),
+              padding: const EdgeInsets.only(top: 20, bottom: 20, left: 5, right: 5),
               unselectedLabelColor: CustomColors.primaryColor,
               indicatorColor: CustomColors.secondaryColor,
               indicator: BoxDecoration(
@@ -43,12 +45,13 @@ class _Tab_BarState extends State<Tab_Bar> {
               tabs: [
                 Tab(
                   child: Container(
+                    padding: EdgeInsets.only(left: 4, right: 4),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         border: Border.all(color: CustomColors.primaryColor, width: 1)),
                     child: const Align(
                       alignment: Alignment.center,
-                      child: Text("Passengers List"),
+                      child: Text("Passenger List", softWrap: true,),
                     ),
                   ),
                 ),

@@ -1,3 +1,4 @@
+import 'package:client_submit/themes/themes.dart';
 import 'package:client_submit/trip_details/expenses_bill/expenses_bill_model.dart';
 import 'package:flutter/material.dart';
 import '../../constants/custom_widgets.dart';
@@ -17,11 +18,12 @@ class _ExpensesBillScreenState extends State<ExpensesBillScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: CustomColors.secondaryColor,
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 22,),
+            const SizedBox(height: 5,),
             ListView.builder(
               shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
