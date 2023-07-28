@@ -28,12 +28,13 @@ class _Tab_BarState extends State<Tab_Bar> {
               child: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back_ios_new, color: CustomColors.primaryColor,),),
             ),
             title: Padding(
-              padding: const EdgeInsets.only(top: 14.0),
+              padding: const EdgeInsets.only(top: 13.0),
               child: Text("Trip Details", style: CustomTheme.lightTheme().textTheme.titleLarge,),
             ),
             centerTitle: true,
 
           bottom: TabBar(
+            isScrollable: true,
               indicatorPadding: EdgeInsets.only(left: 10, right: 10),
               labelPadding: const EdgeInsets.only(left: 10, right: 10, ),
               padding: const EdgeInsets.only(top: 20, bottom: 20, left: 5, right: 5),
@@ -45,6 +46,7 @@ class _Tab_BarState extends State<Tab_Bar> {
               tabs: [
                 Tab(
                   child: Container(
+                    width: 140,
                     padding: EdgeInsets.only(left: 4, right: 4),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
@@ -57,6 +59,7 @@ class _Tab_BarState extends State<Tab_Bar> {
                 ),
                 Tab(
                   child: Container(
+                    width: 120,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         border: Border.all(color: CustomColors.primaryColor, width: 1)),
@@ -68,6 +71,7 @@ class _Tab_BarState extends State<Tab_Bar> {
                 ),
                 Tab(
                   child: Container(
+                    width: 90,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         border: Border.all(color: CustomColors.primaryColor, width: 1)),

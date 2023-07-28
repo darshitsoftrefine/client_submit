@@ -477,7 +477,7 @@ class CustomWidgets {
   Widget passenger2List(
       Color leadColor, bool check, String logoText, String name) {
     return Padding(
-      padding: const EdgeInsets.only(left: 15, right: 15, bottom: 12),
+      padding: const EdgeInsets.only(left: 15, right: 15, bottom: 12, top: 5),
       child: Stack(
         children: [
           Card(
